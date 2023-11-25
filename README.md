@@ -1,13 +1,13 @@
 # LicencePlate-Detector
 ## Implemented a Car Number Plate Recognition System  using ANN based solution. 
 ### Dependencies
--Keras
--OpenCV
--Matplotlibb
--Numpy
--Tensorflow
--Pandas
--Seaborn
+- Keras
+- OpenCV
+- Matplotlibb
+- Numpy
+- Tensorflow
+- Pandas
+- Seaborn
 
 ### Step 1: Pre-process the Car Number Plate
 The image of car number plate is given input and it is preprocessed. In the function segment_characters the image is first resized to make all characters and numbers seem distinct and clear. Next it is converted to gray scale image to avoid RGB colors as they are complex and in grayscale values are between 0 – 255. Now to avoid complexity gray scaled image is converted to binary image by applying threshold. Pixel value above 200 are given value 1 and below 200 are given 0. Eroding is applied to each pixel and checked if all neighbor pixels have value 1 then give that pixel value else give 0. It is done to remove unwanted pixel values from image boundary. Then image is Dilated i.e. a pixel is given value 1 if any one of neighbor pixel has value of 1. Borders of image are made white. At last, four dimensions are defined which are the most important in this entire process and are used to extract characters by comparing width and height of each character and number. At the end of this function we have a processed binary image and we pass it to function to extract characters and numbers.
